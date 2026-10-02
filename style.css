@@ -1,0 +1,151 @@
+:root {
+  --radius: 0.75rem;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  padding-top: 4rem;             
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+.eyebrow {
+  color: var(--bs-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge {
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 0.4em 0.8em;
+}
+section {
+  padding: 3.5rem 0;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+h2::after {                      
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
+  margin-top: 0.5rem;
+  background-color: var(--bs-primary);
+}
+
+.section-intro {
+  max-width: 40rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile {
+  aspect-ratio: 1 / 1;      
+  object-fit: cover;       
+  border: 6px solid var(--bs-body-bg);
+  border-radius: 0.75rem;   
+  box-shadow: var(--shadow);
+  object-position: top;
+}
+.card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.info-card {
+  border-top: 4px solid var(--bs-primary);
+  transition: transform 0.2s;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-body > p:last-child,
+.card-body > ul:last-child {
+  margin-bottom: 0;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contact-links li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-links strong {
+  min-width: 5.5rem;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;      
+  gap: 1rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.facts dt {
+  color: var(--bs-secondary-color);
+  font-weight: 400;
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1030;
+  box-shadow: var(--shadow);
+}
+@media (min-width: 768px) {
+  section {
+    padding: 5rem 0;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .info-card { transition: none; }
+}
